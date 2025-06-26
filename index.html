@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidya K - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+            color: #2d3748;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: #2d3748;
+            padding: 12px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: #f56565 !important;
+            transform: translateY(-1px);
+        }
+
+        .hero-section {
+            position: relative;
+            padding: 100px 0;
+            text-align: center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://wallpaperaccess.com/full/5651990.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 70px;
+            height: 3px;
+            background: #f56565;
+            display: block;
+            margin: 12px auto;
+            border-radius: 2px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 25px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .certificate-img {
+    height: 400px; /* Increase as needed */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+}
+
+.certificate-card {
+    height: 100%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+        .skill-badge {
+            background-color: #2d3748;
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 25px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background-color: #f56565;
+            transform: scale(1.05);
+        }
+
+        .contact-link {
+            color: #2d3748;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #f56565;
+        }
+
+        .resume-btn {
+            background-color: #2d3748;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .resume-btn:hover {
+            background-color: #f56565;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #2d3748;
+            color: #ffffff;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .section-padding {
+            padding: 50px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 70px 0;
+                min-height: 70vh;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            .project-img {
+                height: 120px;
+            }
+            .section-padding {
+                padding: 30px 0;
+            }
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Vidya K</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <img src="20240716_114043.jpg" alt="Profile Photo" class="profile-img">
+
+
+
+            <h1>Vidya K</h1>
+            <p class="lead">B.Tech Information Technology | Full Stack Developer</p>
+            <div class="mt-4">
+                <a href="#contact" class="btn btn-light mx-2">Get in Touch</a>
+                <a href="https://drive.google.com/file/d/1-iAI_f0d6wrH0qN5v9qYhOJdkOqruYwT/view?usp=sharing" download class="btn resume-btn mx-2">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead">
+                        I am an ambitious B.Tech Information Technology student passionate about full-stack development and continuous learning. 
+                        With expertise in Java, ReactJS, and MongoDB, I build innovative solutions like Smart Farming and Stock Management systems. 
+                        My internships at INTERnPE and CODSOFT honed my technical skills, while my leadership as Class Representative in 2023-24 strengthened my teamwork and adaptability. 
+                        I hold AWS and Oracle certifications, reflecting my commitment to excellence. 
+                        Winning awards at hackathons and paper presentations, I strive to create impactful technology and achieve career growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h4>Technical Skills</h4>
+                    <div>
+                        <span class="skill-badge">C</span>
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">HTML</span>
+                        <span class="skill-badge">CSS</span>
+                        <span class="skill-badge">ReactJS</span>
+                        <span class="skill-badge">NodeJS</span>
+                        <span class="skill-badge">ExpressJS</span>
+                        <span class="skill-badge">MongoDB</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">GitHub</span>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <h4>Soft Skills</h4>
+                    <div>
+                        <span class="skill-badge">Leadership</span>
+                        <span class="skill-badge">Adaptability</span>
+                        <span class="skill-badge">Teamwork</span>
+                        <span class="skill-badge">Quick Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Certificates Section -->
+<section id="certificates" class="section-padding">
+    <div class="container">
+        <h2 class="section-title">Internship Certificates</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 mb-4">
+                <div class="card certificate-card">
+                    <img src="Screenshot 2025-06-26 225359.png" alt="InternPE Certificate" class="certificate-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Java Programming Intern</h5>
+                        <p class="card-text">Certificate from INTERNPE (Sep 2024)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card certificate-card">
+                    <img src="Screenshot 2025-06-26 225249.png" alt="CODSOFT Certificate" class="certificate-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Development Intern</h5>
+                        <p class="card-text">Certificate from CODSOFT (Aug 2024)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Education Section -->
+    <section id="education" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">B.Tech Information Technology</h5>
+                            <p class="card-text"><strong>Kongu Engineering College</strong> | 2022 - 2026<br>CGPA: 8.77 (till 5th semester)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">HSC</h5>
+                            <p class="card-text"><strong>SRK Matric Higher Secondary School, Salem</strong> | 2021 - 2022<br>Percentage: 93.83%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">SSLC</h5>
+                            <p class="card-text"><strong>John Britto Matriculation Higher Secondary School, Omalur</strong> | 2019 - 2020<br>Percentage: 92.2%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://static.vecteezy.com/system/resources/previews/018/790/830/large_2x/farmer-in-corn-field-using-digital-tablet-for-smart-farming-innovation-technology-for-smart-farm-system-agriculture-management-concept-of-smart-farming-modern-agricultural-business-photo.jpg" alt="Smart Farming" class="project-img">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Farming</h5>
+                            <p class="card-text">A website to calculate crop productivity.<br><strong>Tech Stack:</strong> ReactJS, MongoDB, NodeJS, ExpressJS<br><a href="https://github.com/vidya-krishnamurthy/smart_farming.git" class="contact-link">View on GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://www.supplymint.com/blogs/wp-content/uploads/2022/05/warehouse-management-software.png" alt="Stock Management System" class="project-img">
+                        <div class="card-body">
+                            <h5 class="card-title">Stock Management System</h5>
+                            <p class="card-text">A website for managing stocks.<br><strong>Tech Stack:</strong> ReactJS, MongoDB Atlas, NodeJS, ExpressJS<br><a href="https://stock-management-system-89js.vercel.app/" class="contact-link">View Live</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://daxg39y63pxwu.cloudfront.net/images/blog/heart-disease-prediction-using-machine-learning-project/Heart_Disease_Prediction_using_Machine_Learning.png" alt="Heart Disease Prediction" class="project-img">
+                        <div class="card-body">
+                            <h5 class="card-title">Heart Disease Prediction</h5>
+                            <p class="card-text">Heart disease prediction using logistic regression.<br><strong>Tech Stack:</strong> Python, Machine Learning<br><a href="https://colab.research.google.com/drive/1KX7DovJZj6ttLVbqrOqjIwhR5n88ZsXe?usp=sharing" class="contact-link">View on Colab</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">DevForge'25 Hackathon</h5>
+                            <p class="card-text">Secured Second Prize on 'Air Pollution Monitoring System' at Kongu Engineering College.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Academic Excellence Award</h5>
+                            <p class="card-text">Received for the year 2022-23 at Kongu Engineering College.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Extended Reality Paper</h5>
+                            <p class="card-text">Secured First Prize at Kongu Engineering College.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Mobile Application for Bunk Maintenance</h5>
+                            <p class="card-text">Presented at Madras Institute of Technology, Chennai.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <p><strong>Phone:</strong> <a href="tel:+919342798883" class="contact-link">+91 9342798883</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:vidya2005k@gmail.com" class="contact-link">vidya2005k@gmail.com</a></p>
+                    <p><strong>Address:</strong> Omalur(tk), Salem(dt)</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/vidya-k2005" class="contact-link">vidya-k2005</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/vidya-krishnamurthy" class="contact-link">vidya-krishnamurthy</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>© 2025 Vidya K. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
